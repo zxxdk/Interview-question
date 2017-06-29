@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel = "stylesheet" href ="./css/index.css">
+<title>高级前端工程师面试题</title>
+
+</head>
+
+<body>
+<div id="page">
+	<div class="one">
+		<ul>
+			<h3>
+				1.常用哪几种浏览器测试？有哪些内核？
+			</h3>
+			<li>(Q1)<strong>浏览器：</strong>IE,Chrome,FireFox,Safari,Opera。</li>
+			<li>(Q2)<strong>内核：</strong>Trident,Gecko,Presto,Webkit。</li>
+		</ul>
+        <ul>
+        	<h3>2.说下行内元素和块级元素的区别？行内块元素的兼容性使用？（IE8）</h3>
+        	<li>(Q1)<strong>行内元素：</strong>会在水平方向排列，不能包含块级元素，设置width无效，height无效(可以设置line-height),margin上下无效。块级元素：各占据一行，垂直方向排列。从新行开始结束接着一个断行。</li>
+        	<li>(Q2)<strong>兼容性</strong>display:inline-block;*display:inline;*zoom:1;</li>
+        </ul>
+        <ul>
+        	<h3>3.css3有哪些新特性?</h3>
+        	<li>选择器，RGBA和透明度，多栏布局，多背景图，Word Wrap，文字阴影，@font-face属性，圆角（边框半径），边框图片，盒阴影，盒子大小，媒体查询，语音</li>
+        </ul>
+        <ul>
+        	<h3>4.响应式布局用什么实现</h3>
+        	<li>利用css3的media query媒体查询功能或bootstrap框架</li>
+        </ul>
+        <ul>
+        	<h3>5.本地存储的生命周期是什么？</h3>
+        	<li>本地存储没有生命周期，它将保留知道用户从浏览器清楚或者使用Javascript代码移除</li>
+        </ul>
+        <ul>
+        	<h3>6.HTML5为什么只需写!Doctype html？</h3>
+        	<li>HTML5不基于SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）。</li>
+        	<li>而HTML4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。</li>
+        </ul>
+        <ul>
+        	<h3>7.box-sizing常用的属性有哪些？分别有什么作用？</h3>
+        	<li>(Q1)<strong>box-sizing:</strong>content-box|border-box|inherit
+        	;</li>
+        	<li>(Q2)<strong>content-box:</strong>宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框（元素默认效果）。border-box:元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</li>
+        </ul>
+        <ul>
+        	<h3>8.介绍一下你对浏览器内核的理解？</h3>
+        	<li>主要分为两部分：渲染引擎（layout engineer或Rendering Engine）和JS引擎。</li>
+        	<li><strong>渲染引擎：</strong>负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</li>
+        	<li><strong>JS引擎：</strong>解析和执行javascript来实现网页的动态效果。</li>
+        	<li>最开始渲染引擎和JS引擎并没有区分的很确定，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</li>
+        </ul>
+        <ul>
+        	<h3>9.css都有哪些选择器？</h3>
+        	<li>派生选择器（用HTML标签申明）</li>
+        	<li>id选择器（用DOM的ID申明）</li>
+        	<li>类选择器（用一个样式类名申明）</li>
+        	<li>属性选择器（用DOM的属性申明，属于CSS2，IE6不支持，不常用，不知道就算了）</li>
+        	<li>后代选择器（利用空格间隙，比如div .a{}）</li>
+        	<li>群组选择器（利用逗号间隔，比如p,div,#a{}）</li>
+
+        </ul>
+        <ul>
+        	<h3>10.什么是外边距重叠？重叠的结果是什么？</h3>
+        	<li>外边距重叠就是margin-collapse.在css中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。
+        	<p>折叠结果遵循下列计算规则：</p>
+        	<p>1.两个相邻的外边距就是正数时，折叠结果是它们两者之间较大的值。</p>
+        	<p>2.两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。</p>
+        	<p>3.两个外边距一正一负时，折叠结果是两者的相加的和。</p></li>
+        </ul>
+        <ul>
+        	<h3>11.如何垂直居中一个浮动元素？</h3>
+        	<div class="box">
+        		<p>#div1{</p>
+        		<p>background-color:#6699FF;</p>
+        		<p>width:200px;</p>
+        		<p>height:200px;   </p>
+        		<p>position: absolute; </p>
+        		<p> top: 50%; </p>
+                <p>left: 50%;   </p>
+        		<p>margin-top:-100px ;</p>
+        		<p> margin-left: -100px;   </p>
+        		<p>}</p>
+
+        	</div>
+        	<div id="div1"></div>
+        </ul>
+        <ul class=first>
+        	<h3>12.行内元素有哪些？块级元素有哪些？CSS的盒元素？</h3>
+        	<li><strong>行内元素：</strong>a b br i span input select</li>
+        	<li><strong>块级元素：</strong>div p h1 h2 h3 h4 form ul</li>
+        	<li><strong>CSS盒模型：</strong>内容，border,margin,padding</li>
+        </ul>
+        <ul>
+        	<h3>13.前端页面有哪三层构成？</h3>
+        	<li>结构层：Html，表示层：Css，行为层:Js</li>
+
+        </ul>
+        <ul>
+        	<h3>14.清除浮动有哪些方式？</h3>
+        	<li>父级div定义height。</li>
+        	<li>结尾处加空div标签clear:both。</li>
+        	<li>父级定义div定义伪类after和zoom。</li>
+        	<li>父级div定义overflow:hidden。</li>
+        	<li>父级div定义overflow:auto。</li>
+        	<li>父级div也浮动，需要定义宽度。</li>
+        	<li>父级div定义display:table。</li>
+        	<li>结尾处加br标签clear:both。</li>
+        </ul>
+        <ul>
+        	<h3>15.简述一下你对HTML语义化的理解？</h3>
+        	<p>用正确的标签做正确的事情。</p>
+        	<p>html语义化让页面的内容结构化，结构更清晰，便于对；浏览器、搜索引擎解析；</p>
+        	<p>即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的；</p>
+        	<p>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;</p>
+        	<p>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
+        </ul>
+        <ul>
+        	<h3>16.html5有哪些新特性？如何处理html5新标签的浏览器兼容问题？如何区分html和html5？</h3>
+        	<p>html5现在已经不是SGML的子集了，主要是关于图像，位置，存储，多任务等功能的增加。</p>
+        	<li>(1)绘画canvas;</li>
+        	<li>(2)用于媒介回放的video和audio元素；</li>
+        	<li>(3)本地离线存储localStorage长期存储数据，浏览器关闭后数据不丢失；</li>
+        	<li>(4)sessionStorage的数据在浏览器关闭后自动删除；</li>
+        	<li>(5)语义化更好的内容元素，比如article、footer、header、nav、section;</li>
+        	<li>(6)表单控件，calendar、date、time、url、search;</li>
+        	<li>(7)新的技术webworker，websocker，Geolocation;</li>
+        	<p>IE8/IE7/IE6支持通过document.createElement方法产生的标签，可以利用这一特性让这些浏览器支持html5新标签，浏览器支持新标签后，还需要添加默认的样式。当然也可以直接使用成熟的框架、比如HTML5shim;</p>
+        </ul>
+        <ul>
+        	<h3>17.rgba()和opacity的透明效果有什么不同？</h3>
+        	<p>rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，而rgba()只作用于元素的颜色或其背景颜色（设置rgba透明的元素的子元素不会继承透明效果！）</p>
+        </ul>
+        <ul>
+             <h3>18.你如何对网站的文件和资源进行优化？</h3>   
+             <p>(1)文件合并</p>
+             <p>(2)文件最小化/文件压缩</p>
+             <p>(3)使用CDN托管</p>
+             <p>(4)缓存的使用</p>
+        </ul>
+        <ul>
+             <h3>19.ajax请求时，如何解释json数据？</h3>
+             <p>使用eval parse鉴于安全性考虑，使用parse更靠谱</p>
+        </ul>
+        <ul>
+             <h3>20.js是什么，js和html的开发如何结合？</h3>
+             <p>js是一种基于对象和事件驱动，具有安全性的脚本语言。</p>
+             <p>可以在html的三个地方编写js脚本语言：一是在网页文件的标签对其直接编写脚本程序代码；二是将脚本程序代码放置在一个单独的文件中，在网页文件中引用这个脚本程序语言；三是将脚本程序代码作为某个元素的事件属性值或超链接的href属性值。</p>
+        </ul>
+        <ul>
+             <h3>21.常用的设计模式有哪些？</h3>
+             <p>单例模式、外观模式、工厂模式、代理模式、观察者模式、构造函数模式、建造者模式、装饰着模式、命令模式、迭代器模式、模板模式等等。</p>
+        </ul>
+        <ul>
+            <h3>22.简述一下渐进增强和优雅降级？</h3>
+            <p>渐进增强：针对低版本进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p> 
+            <p>优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>   
+        </ul>
+        <ul>
+                <h3>23.说说你对闭包的理解。</h3>
+                <p>使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内训泄漏。在js中，函数即闭包，只有函数才会产生作用于的概念。</p>
+                <p>闭包有三个特性：1.函数嵌套函数。2.函数内部可以引用外部的参数和变量。3、参数和变量不会被垃圾回收机制回收。</p>
+        </ul>
+        <ul>
+                <h3>24.display:none和visibility:hidden的区别？</h3>
+                <p>display:none 隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，会当它从来不存在。</p>
+                <p>visibility:hidden 隐藏对应元素，但是在文档布局中仍保存原来的空间。 </p>
+        </ul>
+        <ul>
+                <h3>25.DOM怎样添加、移除、移动、复制和查找节点?</h3>
+                <li>(1)创建新节点</li>
+                <p>createDocumentFragment()  //创建一个DOM片段</p>
+                <p>createElement()  //创建一个具体的元素</p>
+                <p>createTextNode()  //创建一个文本节点</p>
+                <li>(2).添加、移除、替换、插入</li>
+                <p>appendChild()</p>
+                <p>removeChild()</p>
+                <p>replaceChild()</p>
+                <p>insertBefore()  //并没有insertAfter()</p>
+                <li>(3)查找</li>
+                <p>getElementByTagName()  //通过标签名称</p>
+                <p>getElementsByName()  //通过元素的Name属性的值</p>
+                <p>getElementById()  //通过元素Id ，唯一性</p>
+        </ul>
+        <ul>
+                <h3>26.操作符具体干了什么呢？</h3>
+                <li>1.创建一个空对象，并且this变量引用该对象，同时还继承了该函数的原型。</li>
+                <li>2.属性和方法被加入到this引用的对象中。</li>
+                <li>3.新创建的对象由this所引用，并且最后隐式的返回this。</li>
+        </ul>
+        <ul>
+                <h3>27.Javascript继承的方法有哪些？</h3>
+                <p>原型继承、借用构造函数继承、组合继承(原型+借用构造)、原型式继承、寄生式继承、寄生组合式继承</p>
+        </ul>
+        <ul>
+                <h3>28.创建ajax的过程。</h3>
+                <li>1.创建'XMLHttpRequest'对象，也就是创建一个异步调用对象。</li>
+                <li>2.创建一个新的'HTTP'请求，并指定该'HTTP'请求的方法、'URL'及验证信息。</li>
+                <li>3.设置响应'HTTP'请求状态变化的函数。</li>
+                <li>4.发送'HTTP'请求。</li>
+                <li>5.获取异步调用返回的数据。</li>
+                <li>6.使用Javascript和DOM实现局部刷新。</li>
+        </ul>
+        <ul>
+                <h3>29.请解释JavaScript的同源策略。</h3>
+                <p>同源策略是客服端脚本的重要安全度量标准。它最早出自Netscape Navigator2.0，其目的是放置某个文档或脚本从多个不同源装载。</p>
+                <p>这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议。</p>
+        </ul>
+        <ul>
+                <h3>30.为什么要有同源限制？</h3>
+                <p>我们举例说明：比如一个黑客程序，他利用Iframe把真正的银行登录页面先嵌到他的页面上，当使用真正的用户名，密码登录时，他的页面就通过javascript读取到你的表单中input中的内容，这样用户名，密码就轻松到手了。</p>
+                <p><strong>缺点：</strong>现在网站的js都会进行压缩，一些文件用了严格模式，而另一些没有。这是这些本来是严格模式的文件，被merge后，这个串就到了文件的中间，不仅没有指示严格模式，反而在压缩后浪费了字节。</p>
+        </ul>
+        <ul>
+                <h3>31.GET和POST的区别，何时使用POST？</h3>
+                <p><strong>GET:</strong>一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一把在2000个自字符。</p>
+                <p><strong>POST:</strong>一般用于修改服务器上的资源，对所发送的信息没有限制。</p>
+                <p>GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.From来获取变量的值，也就是说GET是通过地址栏来传值，而POST是通过提交表单来传值。</p>
+                <p>然而，在以下情况中，请使用POST请求：</p>
+                <p>(1)无法使用缓存文件（更新服务器上的文件或数据库）</p>
+                <p>(2)向服务器发送大量数据（POET没有数据量限制）</p>
+                <p>(3)发送包含未知字符的用户输入时，POST比GET更稳定也更可靠。</p>
+        </ul>
+        <ul>
+                <h3>32.document.write()的用法。</h3>
+                <p>document.write()方法可以用在两个方面：页面载入过程中用实时脚本创建页面内容，以及用延时脚本创建本窗口或新窗口的内容。</p>
+                <p>document.write只能重绘整个页面。innerHTML可以重绘页面的一部分。</p>
+        </ul>
+        <ul>
+                <h3>33.git fetch 和 git pull 的区别。</h3>
+                <p><strong>git pull:</strong>相当于是从远程获取最新版本并merge到本地。</p>
+                <p><strong>git fetch:</strong>相当于是从远程获取最新版本到本地，不会自动merge.</p>
+
+        </ul>
+        <ul>
+                <h3>34.ie各版本和Chrome可以并行下载多少个资源？</h3>
+                <p>IE6两个并发，IE7升级之后的6个并发，之后的版本也是6个。</p>
+                <p>Firefox和Chrome也是6个。</p>
+        </ul>
+        <ul>
+                <h3>35.Flash 和 Ajax 各自的优缺点，在使用中如何取舍。</h3>
+                <p>Flash 适合处理多媒体、矢量图形、访问机器；对css处理文本上不足，不容易被搜索。</p>
+                <p>Ajax 对css、文本支持很好，支持搜索；多媒体、矢量图形、机器访问不足。</p>
+        </ul>
+        <ul>
+                <h3>36.position的值，relative和absolute分别是相对于谁进行定位的。</h3>
+                <p>absolute:生成绝对定位的元素，相对于最近一级的定位不会static的父元素来进行定位。</p>
+                <p>fixed（老IE不支持）生成绝对定位元素，通常相对于浏览器窗口或iframe进行定位。</p>
+                <p>relative生成相对元素，相对于其在普通刘中国的位置进行定位。</p>
+                <p>static默认值。没有定位，元素出现在正常的流中。</p>
+                <p>sticky生成粘性定位的元素，容器的位置根据正常文档流计算得出。</p>
+        </ul>
+        <ul>
+                <h3>37.XML和JSON的区别？</h3>
+                <li>(1)数据体积方面：JSON相对于XML来讲，数据体积小，传递的速度鞥快些。</li>
+                <li>(2)数据交互方面：JSON与JavaScript的交互更加方便，更容易解析处理，更好的数据交互。</li>
+                <li>(3)数据描述方面：JSON对数据的描述性比XML较差。</li>
+                <li>(4)传输速度方面：JSON的速度要远远快于XML。</li>
+        </ul>
+        <ul>
+               <h3>38.常用的库有哪些。</h3>
+               <li>操作DOM以及请求：jquery、zepto。</li>
+               <li>MVC和MVVM：canjs、react、Angular.js、polymer等。</li>
+               <li>图表：Highcharts、D3js等。</li>
+               <li>动画库：JQuery Transit 、Transform.js 、Animatable等。</li>
+               <li>UI组件：jQueryul、extjs。</li>
+        </ul>
+
+	</div>
+</div>
+
+</body>
+</html>
